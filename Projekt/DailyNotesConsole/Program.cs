@@ -7,8 +7,8 @@ namespace DailyNotesConsole
     {
         static void Main(string[] args)
         {
-            Note note1 = new Note("test");
-            Console.WriteLine(note1.Content);
+            Note note1 = new Note("I will take out the trash");
+            Console.WriteLine(note1);
         }
     }
 }
