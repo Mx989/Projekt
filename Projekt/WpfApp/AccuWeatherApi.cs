@@ -20,6 +20,7 @@ namespace WpfApp
     class Forecast
     {
         public Headline Headline { get; set; }
+        public List<DailyForecasts> DailyForecasts { get; set; }
 
     }
     class Headline
