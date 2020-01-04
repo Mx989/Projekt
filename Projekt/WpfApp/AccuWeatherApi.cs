@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace WpfApp
 {
     //search via "Text search" (https://developer.accuweather.com/accuweather-locations-api/apis/get/locations/v1/cities/search)
-    class CitySearch
+    public class CitySearch
     {
         //location key used in forecast search
         public string Key { get; set; }
@@ -15,28 +15,28 @@ namespace WpfApp
         public string LocalizedName { get; set; }
         public List<SupplementalAdminAreas> SupplementalAdminAreas { get; set; }
     }
-    class SupplementalAdminAreas
+    public class SupplementalAdminAreas
     {
         //1-x podziały administracyjne, w polsce to przeważnie 2- powiat 3-gmina
         public int Level { get; set; }
         public string LocalizedName { get; set; }
     }
     //1-Day DailyForecast(https://developer.accuweather.com/accuweather-forecast-api/apis/get/forecasts/v1/daily/1day/%7BlocationKey%7D)
-    class Forecast
+    public class Forecast
     {
         public Headline Headline { get; set; }
         //dziena prognoza
         public List<DailyForecasts> DailyForecasts { get; set; }
 
     }
-    class Headline
+    public class Headline
     {
         //nagłówek prognozy
         public string Text { get; set; }
         public string Link { get; set; }
 
     }
-    class DailyForecasts
+    public class DailyForecasts
     {
         public string Date { get; set; }
         public Temperature Temperature { get; set; }
@@ -45,20 +45,20 @@ namespace WpfApp
         public string Link { get; set; }
 
     }
-    class Temperature
+    public class Temperature
     {
         public Minimum Minimum { get; set; }
         public Minimum Maximum { get; set; }
     }
-    class Minimum
+    public class Minimum
     {
         public string Value { get; set; }
     }
-    class Maximum
+    public class Maximum
     {
         public string Value { get; set; }
     }
-    class Day
+    public class Day
     {
         // we have to dowload icon list from https://developer.accuweather.com/weather-icons, for eg. sunny day ico
         public int Icon { get; set; }
@@ -69,7 +69,7 @@ namespace WpfApp
         public string PrecipitationType { get; set; }
         public string PrecipitationIntensity { get; set; }
     }
-    class Night
+    public class Night
     {
         // we have to dowload icon list from https://developer.accuweather.com/weather-icons, for eg. sunny day ico
         public int Icon { get; set; }
@@ -81,7 +81,7 @@ namespace WpfApp
         public string PrecipitationIntensity { get; set; }
     }
     //12 hours hourly forecast- this is free(https://developer.accuweather.com/accuweather-forecast-api/apis/get/forecasts/v1/hourly/12hour/%7BlocationKey%7D)
-    class HourlyForecast
+    public class HourlyForecast
     {
         public string DateTime { get; set; }
         public int WeatherIcon { get; set; }
@@ -94,7 +94,7 @@ namespace WpfApp
         public string PrecipitationProbability { get; set; }
         public string link { get; set; }
     }
-    class HourlyTemperature
+    public class HourlyTemperature
     {
         public string Value { get; set; }
     }

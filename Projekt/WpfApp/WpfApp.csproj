@@ -64,6 +64,7 @@
     </ApplicationDefinition>
     <Compile Include="AccuWeatherApi.cs" />
     <Compile Include="accuWeatherLogic.cs" />
+    <Compile Include="newsApiLogic.cs" />
     <Compile Include="newsApi.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Page Include="MainWindow.xaml">
