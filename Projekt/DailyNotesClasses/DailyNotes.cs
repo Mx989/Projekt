@@ -16,8 +16,22 @@ namespace DailyNotesClasses
 
         public void addNote(Note newNote)
         {
-            Notes.Add(newNote);
+            try
+            {
+                checkLength();
+                Notes.Add(newNote);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
+
+        private void checkLength()
+        {
+            if (Notes.Count > 300) throw new IndexOutOfRangeException("Maximum amount of Notes is 300");
+        }
+
 
     }
 }

@@ -8,6 +8,8 @@ namespace DailyNotesConsole
         static void Main(string[] args)
         {
             DailyNotes notesList = new DailyNotes();
+            notesList.addNote(new Note(1, "blablabla"));
+
         }
     }
 }
