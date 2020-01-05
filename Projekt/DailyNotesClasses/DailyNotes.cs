@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace DailyNotesClasses
@@ -7,18 +8,18 @@ namespace DailyNotesClasses
     public class DailyNotes
     {
         public List<Note> Notes { get; }
-
+        private string SavePath = Directory.GetCurrentDirectory() + "\\test.txt";
         public DailyNotes()
         {
             Notes = new List<Note>();
-
+            LoadNotes();
         }
 
         public void addNote(Note newNote)
         {
             try
             {
-                checkLength();
+                CheckLength();
                 Notes.Add(newNote);
             }
             catch(Exception e)
@@ -27,9 +28,45 @@ namespace DailyNotesClasses
             }
         }
 
-        private void checkLength()
+        private void CheckLength()
         {
             if (Notes.Count > 300) throw new IndexOutOfRangeException("Maximum amount of Notes is 300");
+        }
+
+        public void SaveNotes()
+        {
+            using (StreamWriter sw = File.CreateText(SavePath))
+            {
+                foreach(Note singleNote in Notes)
+                {
+                    sw.WriteLine($"Id: {singleNote.Id}");
+                    sw.WriteLine($"Date: {singleNote.PublicationDate}");
+                    sw.WriteLine($"Content: {singleNote.Content}");
+                    sw.WriteLine("---");
+                }
+            }
+        }
+
+        private void LoadNotes()
+        {
+            if (File.Exists(SavePath))
+            {
+                using (StreamReader sr = File.OpenText(SavePath))
+                {
+                    string id = "";
+                    string publicationDate = "";
+                    string content = "";
+                    string line = "";
+
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                       if (line.Substring(0, 1) == "-") Notes.Add(new Note(int.Parse(id), content));
+                       else if (line.Substring(0, 2) == "Id")  id = line.Substring(4);
+                       else if (line.Substring(0, 7) == "Content") content = line.Substring(9);
+                    }
+                }
+
+            }
         }
 
 
