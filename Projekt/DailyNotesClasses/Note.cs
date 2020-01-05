@@ -4,10 +4,11 @@ namespace DailyNotesClasses
 {
     public class Note
     {
+        public int Id { get; }
         public string Content { get; set; }
         public string PublicationDate { get; set; }
 
-        public Note(string _content)
+        public Note(int _id,string _content)
         {
             try
             {
@@ -19,6 +20,7 @@ namespace DailyNotesClasses
                 Console.WriteLine(e.Message);
             }
 
+            this.Id = _id;
             this.Content = _content;
             this.PublicationDate = DateTime.Now.ToString("yyyy-MM-dd");
         }
