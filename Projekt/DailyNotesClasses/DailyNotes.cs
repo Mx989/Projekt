@@ -15,12 +15,12 @@ namespace DailyNotesClasses
             LoadNotes();
         }
 
-        public void addNote(Note newNote)
+        public void addNote(string content)
         {
             try
             {
                 CheckLength();
-                Notes.Add(newNote);
+                Notes.Add(new Note(Notes.Count,content));
             }
             catch(Exception e)
             {
@@ -60,9 +60,10 @@ namespace DailyNotesClasses
 
                     while ((line = sr.ReadLine()) != null)
                     {
-                       if (line.Substring(0, 1) == "-") Notes.Add(new Note(int.Parse(id), content));
-                       else if (line.Substring(0, 2) == "Id")  id = line.Substring(4);
-                       else if (line.Substring(0, 7) == "Content") content = line.Substring(9);
+                        if (line.Substring(0, 1) == "-") Notes.Add(new Note(int.Parse(id), content));
+                        else if (line.Substring(0, 2) == "Id") id = line.Substring(4).TrimEnd();
+                        else if (line.Substring(0, 4) == "Date") publicationDate = line.Substring(6).TrimEnd();
+                        else if (line.Substring(0, 7) == "Content") content = line.Substring(9).TrimEnd();
                     }
                 }
 

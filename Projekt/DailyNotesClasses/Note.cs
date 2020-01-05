@@ -8,7 +8,7 @@ namespace DailyNotesClasses
         public string Content { get; set; }
         public string PublicationDate { get; set; }
 
-        public Note(int _id,string _content)
+        public Note(int _id,string _content, string _publicationDate = null)
         {
             try
             {
@@ -22,7 +22,7 @@ namespace DailyNotesClasses
 
             this.Id = _id;
             this.Content = _content;
-            this.PublicationDate = DateTime.Now.ToString("yyyy-MM-dd");
+            this.PublicationDate = _publicationDate == null? DateTime.Now.ToString("yyyy-MM-dd") : _publicationDate;
         }
 
         public override string ToString()
