@@ -28,16 +28,25 @@ namespace DailyNotesClasses
             }
         }
 
+        public void deleteNote(int noteId)
+        {
+            Notes.RemoveAll(x => x.Id == noteId);
+        }
+
         private void CheckLength()
         {
             if (Notes.Count > 300) throw new IndexOutOfRangeException("Maximum amount of Notes is 300");
         }
 
+
+
+
+
         public void SaveNotes()
         {
             using (StreamWriter sw = File.CreateText(SavePath))
             {
-                foreach(Note singleNote in Notes)
+                foreach (Note singleNote in Notes)
                 {
                     sw.WriteLine($"Id: {singleNote.Id}");
                     sw.WriteLine($"Date: {singleNote.PublicationDate}");
@@ -69,6 +78,8 @@ namespace DailyNotesClasses
 
             }
         }
+
+
 
 
     }

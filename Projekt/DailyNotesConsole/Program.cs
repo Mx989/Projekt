@@ -7,6 +7,7 @@ namespace DailyNotesConsole
     {
         static void Main(string[] args)
         {
+
             DailyNotes notesList = new DailyNotes();
             Console.WriteLine(notesList.Notes.Count);
 
