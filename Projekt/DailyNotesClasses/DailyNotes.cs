@@ -40,8 +40,6 @@ namespace DailyNotesClasses
 
 
 
-
-
         public void SaveNotes()
         {
             using (StreamWriter sw = File.CreateText(SavePath))
