@@ -12,10 +12,12 @@ namespace DailyNotesClasses
         {
             try
             {
-                if (_content.Trim().Length < 5) throw new ArgumentException("Note length can't be lower than 5 characters!");
+                if (_content.Trim().Length < 5) throw new ArgumentException("Note length can't be < than 5 characters!");
+                if (_content.Trim().Length > 300) throw new ArgumentException("Note length can't be > than 300 characters!");
+
 
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
