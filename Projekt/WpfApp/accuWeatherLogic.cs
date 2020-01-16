@@ -10,6 +10,10 @@ using RestSharp;
 
 namespace WpfApp
 {
+    //apikey=c6eMCGjH1pvf1hvI47hLVKcRrA2R41gr 
+
+
+
     public class accuWeatherLogic{
         public static List<CitySearch> getLocation(string token, string query)
         {
