@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace WpfApp
 {
-    class Headlines
+    public class Headlines
     {
         public string status { get; set; }
         public int totalResults { get; set; }
-        public Articles articles { get; set; }
+        public List<Articles> articles { get; set; }
     }
-    class Articles
+    public class Articles
     {
         public Source source { get; set; }
         public string author { get; set; }
@@ -23,25 +21,25 @@ namespace WpfApp
         public string publishedAt { get; set; }
         public string content { get; set; }
     }
-    class Source
+    public class Source
     {
         public string id { get; set; }
         public string name { get; set; }
     }
-    class _Sources
+    public class _Sources
     {
         public string status { get; set; }
         public Sources sources { get; set; }
 
     }
-    class Sources
+    public class Sources
     {
-        public string id {get; set;}
-        public string name {get; set;}
-        public string description {get; set;}
-        public string url {get; set;}
-        public string category {get; set;}
-        public string language {get; set;}
-        public string country {get; set;}
+        public string id { get; set; }
+        public string name { get; set; }
+        public string description { get; set; }
+        public string url { get; set; }
+        public string category { get; set; }
+        public string language { get; set; }
+        public string country { get; set; }
     }
 }
