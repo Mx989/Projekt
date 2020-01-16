@@ -8,13 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using RestSharp;
 
-namespace WpfApp
+namespace AccuWeatherApi
 {
     //apikey=c6eMCGjH1pvf1hvI47hLVKcRrA2R41gr 
 
-
-
-    public class accuWeatherLogic{
+    public class AccuWeatherLogic
+    {
         public static List<CitySearch> getLocation(string token, string query)
         {
             /*RestClient client = new RestClient("http://dataservice.accuweather.com/locations/v1/");
