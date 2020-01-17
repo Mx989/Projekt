@@ -4,9 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp", "WpfApp\WpfApp.csproj", "{9E70FF73-AD25-4EC8-9BE9-5C7F2DD65B52}"
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsApi", "NewsApi\NewsApi.csproj", "{162C4683-F0B4-4AA2-A222-2290C8D2932F}"
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccuWeatherApi", "AccuWeatherApi\AccuWeatherApi.csproj", "{5B7D6CC1-80F3-4F0A-97A7-751A8F55EABD}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DailyNotesConsole", "DailyNotesConsole\DailyNotesConsole.csproj", "{21DAA992-C622-4AF2-B2D2-475D2E2AB4F7}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DailyNotesClasses", "DailyNotesClasses\DailyNotesClasses.csproj", "{8B482DDD-0FC6-4B85-9738-978B3AA13536}"
 EndProject
 Global
@@ -19,14 +19,6 @@ Global
 		{9E70FF73-AD25-4EC8-9BE9-5C7F2DD65B52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E70FF73-AD25-4EC8-9BE9-5C7F2DD65B52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E70FF73-AD25-4EC8-9BE9-5C7F2DD65B52}.Release|Any CPU.Build.0 = Release|Any CPU
-		{162C4683-F0B4-4AA2-A222-2290C8D2932F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{162C4683-F0B4-4AA2-A222-2290C8D2932F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{162C4683-F0B4-4AA2-A222-2290C8D2932F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{162C4683-F0B4-4AA2-A222-2290C8D2932F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5B7D6CC1-80F3-4F0A-97A7-751A8F55EABD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5B7D6CC1-80F3-4F0A-97A7-751A8F55EABD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5B7D6CC1-80F3-4F0A-97A7-751A8F55EABD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5B7D6CC1-80F3-4F0A-97A7-751A8F55EABD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{21DAA992-C622-4AF2-B2D2-475D2E2AB4F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{21DAA992-C622-4AF2-B2D2-475D2E2AB4F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21DAA992-C622-4AF2-B2D2-475D2E2AB4F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
