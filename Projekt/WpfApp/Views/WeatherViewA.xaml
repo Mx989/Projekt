@@ -10,8 +10,8 @@
         <viewModels:WeatherViewAViewModel/>
     </UserControl.DataContext>
     <Grid Height="170" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="300" Margin="0,0,-1,1">
-        <Image x:Name="currentWeather" Height="130" Margin="0,10,160,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="130" Source="{Binding TheImage}"/>
-        <Image x:Name="nextHourWeather" HorizontalAlignment="Left" Height="70" Margin="176,70,0,0" VerticalAlignment="Top" Width="70" Source="{Binding TheImage}"/>
+        <Image x:Name="currentWeather" Height="130" Margin="0,10,160,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="130" Source="{Binding CurrentWeatherImage}"/>
+        <Image x:Name="nextHourWeather" HorizontalAlignment="Left" Height="70" Margin="176,70,0,0" VerticalAlignment="Top" Width="70" Source="{Binding NextHourWeatherImage}"/>
 
     </Grid>
 </UserControl>

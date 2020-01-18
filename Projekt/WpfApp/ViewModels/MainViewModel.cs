@@ -11,31 +11,52 @@ namespace WpfApp.ViewModels
 {
     class MainViewModel : ViewModelBase
     {
+        #region Properties
+        //News
         private ICommand _goToNewsCommand;
 
         private object _currentNewsView;
         private object _newsViewA;
         private object _newsViewB;
 
+        //Weather
         private ICommand _goToWeatherCommand;
 
         private object _currentWeatherView;
         private object _weatherViewA;
         private object _weatherViewB;
 
+        //Notes
+        private ICommand _goToNoteCommand;
 
+        private object _currentNotesView;
+        private object _notesViewA;
+        private object _notesViewB;
+        #endregion
+
+        #region Constructor
         public MainViewModel()
         {
+            //Construct views for news
             _newsViewA = new NewsViewA();
             _newsViewB = new NewsViewB();
 
             CurrentNewsView = _newsViewA;
 
+            //Construct views for weather
             _weatherViewA = new WeatherViewA();
             _weatherViewB = new WeatherViewB();
 
             CurrentWeatherView = _weatherViewA;
+
+            //Construct views for notes
+            _notesViewA = new NotesViewA();
+            _notesViewB = new NotesViewB();
+
+            CurrentNotesView = _notesViewA;
         }
+        #endregion
+
         #region News
         public object CurrentNewsView
         {
@@ -95,5 +116,34 @@ namespace WpfApp.ViewModels
         }
         #endregion
 
+        #region Notes
+        public object CurrentNotesView
+        {
+            get { return _currentNotesView; }
+            set
+            {
+                _currentNotesView = value;
+                OnPropertyChanged("CurrentNotesView");
+            }
+        }
+
+        public object GoToNoteCommand
+        {
+            get
+            {
+                return _goToNoteCommand ?? (_goToNoteCommand = new RelayCommand(
+                    x =>
+                    {
+                        GoToNote();
+                    }));
+            }
+        }
+
+        public void GoToNote()
+        {
+            CurrentWeatherView = _notesViewB;
+            //TODO Connecting data of specific note
+        }
+        #endregion
     }
 }

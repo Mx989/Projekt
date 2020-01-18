@@ -10,9 +10,14 @@ namespace WpfApp.ViewModels
 {
     class WeatherViewAViewModel
     {
-        public string TheImage //TEMPORARY
+        public string CurrentWeatherImage//TEMPORARY
         {
-            get { return "http://images.pexels.com/photos/744667/pexels-photo-744667.jpeg"; }
+            get { return "https://cdn1.iconfinder.com/data/icons/weather-forecast-meteorology-color-1/128/weather-sunny-512.png"; }
+        }
+
+        public string NextHourWeatherImage//TEMPORARY
+        {
+            get { return "https://cdn1.iconfinder.com/data/icons/weather-forecast-meteorology-color-1/128/weather-sunny-512.png"; }
         }
 
         public WeatherViewAViewModel()

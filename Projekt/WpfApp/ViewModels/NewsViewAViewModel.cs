@@ -12,7 +12,7 @@ namespace WpfApp.ViewModels
     {
         public string TheImage //TEMPORARY
         {
-            get { return "http://images.pexels.com/photos/744667/pexels-photo-744667.jpeg"; }
+            get { return "https://cdn.photographylife.com/wp-content/uploads/2018/09/Nikon-Z7-Sample-Photo-960x720.jpg"; }
         }
 
         private ObservableCollection<Articles> _articles;

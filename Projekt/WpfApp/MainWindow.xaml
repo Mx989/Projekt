@@ -15,16 +15,28 @@
         <DataTemplate DataType="{x:Type viewModels:WeatherViewAViewModel}">
             <views:WeatherViewA/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:NotesViewAViewModel}">
+            <views:NotesViewA/>
+        </DataTemplate>
     </Window.Resources>
 
     <Window.DataContext>
         <viewModels:MainViewModel/>
     </Window.DataContext>
 
-    <Grid Margin="0,0,292,-3" Background="white">
-        <ContentControl x:Name="News" Content="{Binding CurrentNewsView}"/>
+    <Grid Margin="0,0,0,0" Background="white">
+
+        <Grid HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="500" Background="#FF9700FF" Margin="0">
+            <ContentControl x:Name="News" Content="{Binding CurrentNewsView}"/>
+        </Grid>
+
         <Grid HorizontalAlignment="Left" x:Name="WeatherGrid" Height="170" Margin="500,0,-605,0" VerticalAlignment="Top" Width="292" Background="Aqua" >
             <ContentControl x:Name="Weather" Content="{Binding CurrentWeatherView}"/>
         </Grid>
+
+        <Grid x:Name="NotesGrid" HorizontalAlignment="Left" Height="272" Margin="500,170,0,0" VerticalAlignment="Top" Width="287">
+            <ContentControl x:Name="Notes" Content="{Binding CurrentNotesView}" Margin="0,0,-5,-5"/>
+        </Grid>
+
     </Grid>
 </Window>
