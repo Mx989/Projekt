@@ -62,14 +62,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\EventArgs.cs" />
+    <Compile Include="Classes\EventRaiser.cs" />
+    <Compile Include="Classes\RelayCommand.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\NewsViewAViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="ViewModels\WeatherViewAViewModel.cs" />
+    <Compile Include="ViewModels\WeatherViewBViewModel.cs" />
     <Compile Include="Views\NewsViewA.xaml.cs">
       <DependentUpon>NewsViewA.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\NewsViewB.xaml.cs">
       <DependentUpon>NewsViewB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WeatherViewA.xaml.cs">
+      <DependentUpon>WeatherViewA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WeatherViewB.xaml.cs">
+      <DependentUpon>WeatherViewB.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -88,6 +99,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\NewsViewB.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WeatherViewA.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WeatherViewB.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -121,6 +140,23 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AccuWeatherApi\AccuWeatherApi.csproj">
+      <Project>{5b7d6cc1-80f3-4f0a-97a7-751a8f55eabd}</Project>
+      <Name>AccuWeatherApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DailyNotesClasses\DailyNotesClasses.csproj">
+      <Project>{8b482ddd-0fc6-4b85-9738-978b3aa13536}</Project>
+      <Name>DailyNotesClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NewsApi\NewsApi.csproj">
+      <Project>{162c4683-f0b4-4aa2-a222-2290c8d2932f}</Project>
+      <Name>NewsApi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\photo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

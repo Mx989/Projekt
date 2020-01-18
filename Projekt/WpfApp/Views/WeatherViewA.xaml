@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="WpfApp.Views.WeatherViewA"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp.Views"
+             xmlns:viewModels="clr-namespace:WpfApp.ViewModels"
+             mc:Ignorable="d" Height="171" Width="299">
+    <UserControl.DataContext>
+        <viewModels:WeatherViewAViewModel/>
+    </UserControl.DataContext>
+    <Grid Height="170" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="300" Margin="0,0,-1,1">
+        <Image x:Name="currentWeather" Height="130" Margin="0,10,160,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="130" Source="{Binding TheImage}"/>
+        <Image x:Name="nextHourWeather" HorizontalAlignment="Left" Height="70" Margin="176,70,0,0" VerticalAlignment="Top" Width="70" Source="{Binding TheImage}"/>
+
+    </Grid>
+</UserControl>
