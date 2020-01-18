@@ -30,7 +30,7 @@
             <ContentControl x:Name="News" Content="{Binding CurrentNewsView}"/>
         </Grid>
 
-        <Grid HorizontalAlignment="Left" x:Name="WeatherGrid" Height="170" Margin="500,0,-605,0" VerticalAlignment="Top" Width="292" Background="Aqua" >
+        <Grid HorizontalAlignment="Left" x:Name="WeatherGrid" Height="170" Margin="500,0,-605,0" VerticalAlignment="Top" Width="292" Background="#FF343434" >
             <ContentControl x:Name="Weather" Content="{Binding CurrentWeatherView}"/>
         </Grid>
 
