@@ -32,17 +32,6 @@ namespace WpfApp.DataProviders
         {
             _categories.Add("general");
             _articlesList = newsApiLogic.getTopHeadlines("70e25f57e97c41758d9b6bb6e0ad6397", _categories);
-            foreach(var element in _articlesList)
-            {
-                if (element.urlToImage.LastIndexOf("jpg") > 0)
-                    element.urlToImage = element.urlToImage.Substring(0, element.urlToImage.LastIndexOf("jpg") + 3);
-                else if (element.urlToImage.LastIndexOf("jpeg") > 0)
-                    element.urlToImage = element.urlToImage.Substring(0, element.urlToImage.LastIndexOf("jpeg") + 4);
-
-                //string newUrl = element.urlToImage;
-               //newUrl = newUrl.Remove(0, 5);
-                //element.urlToImage = "http" + newUrl;
-            }
             _articlesCollection = CreateObservableCollectionFromList(_articlesList);
             
         }
