@@ -14,7 +14,11 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Image x:Name="MainNewsPhoto" Height="331" VerticalAlignment="Top" Source="{Binding MainNewsImage}" Stretch="Fill" HorizontalAlignment="Left" Width="500"/>
+        <Image x:Name="MainNewsPhoto" Height="331" VerticalAlignment="Top" Source="{Binding MainNewsImage}" Stretch="Fill" HorizontalAlignment="Left" Width="500">
+            <Image.InputBindings>
+                <MouseBinding Gesture="LeftClick" Command="{Binding RelativeSource = {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.GoToNewsCommand}" />
+            </Image.InputBindings>
+        </Image>
         <Label x:Name="MainNewsLabel" Content="{Binding MainNewsTitle}" HorizontalAlignment="Left" Margin="0,276,0,0" VerticalAlignment="Top" Height="55" Width="500" Foreground="White" FontFamily="Arial" FontSize="24" FontWeight="Bold" Background="#B2646464"/>
         <Image x:Name="SideNews1Photo" HorizontalAlignment="Right" Height="121" Margin="-10,331,334,-2" VerticalAlignment="Top" Width="176" Source="{Binding SideNews1Image}"/>
         <Image x:Name="SideNews2Photo" HorizontalAlignment="Left" Height="121" Margin="161,331,0,-2" VerticalAlignment="Top" Width="186" Source="{Binding SideNews2Image}"/>

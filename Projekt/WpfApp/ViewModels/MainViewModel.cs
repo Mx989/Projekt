@@ -11,7 +11,14 @@ namespace WpfApp.ViewModels
 {
     class MainViewModel : ViewModelBase
     {
+
         #region Properties
+        public string HomeIcon
+        {
+            get { return "https://image.shutterstock.com/image-vector/home-icon-sign-symbol-260nw-1229123275.jpg"; }
+        }
+        private ICommand _goToHomePageCommand;
+
         //News
         private ICommand _goToNewsCommand;
 
@@ -21,10 +28,12 @@ namespace WpfApp.ViewModels
 
         //Weather
         private ICommand _goToWeatherCommand;
+        private ICommand _goToCalendarCommand;
 
         private object _currentWeatherView;
         private object _weatherViewA;
         private object _weatherViewB;
+        private object _calendarView;
 
         //Notes
         private ICommand _goToNoteCommand;
@@ -46,6 +55,7 @@ namespace WpfApp.ViewModels
             //Construct views for weather
             _weatherViewA = new WeatherViewA();
             _weatherViewB = new WeatherViewB();
+            _calendarView = new CalendarView();
 
             CurrentWeatherView = _weatherViewA;
 
@@ -53,6 +63,27 @@ namespace WpfApp.ViewModels
             _notesViewA = new NotesViewA();
             _notesViewB = new NotesViewB();
 
+            CurrentNotesView = _notesViewA;
+        }
+        #endregion
+
+        #region Navigation
+        public object GoToHomePageCommand
+        {
+            get
+            {
+                return _goToHomePageCommand ?? (_goToHomePageCommand = new RelayCommand(
+                    x =>
+                    {
+                        GoToHomePage();
+                    }));
+            }
+        }
+
+        public void GoToHomePage()
+        {
+            CurrentNewsView = _newsViewA;
+            CurrentWeatherView = _weatherViewA;
             CurrentNotesView = _notesViewA;
         }
         #endregion
@@ -85,6 +116,7 @@ namespace WpfApp.ViewModels
             CurrentNewsView = _newsViewB;
             //TODO connecting data of specific news
         }
+
         #endregion
 
         #region Weather
@@ -116,6 +148,26 @@ namespace WpfApp.ViewModels
         }
         #endregion
 
+        #region Calendar
+
+        public object GoToCalendarCommand
+        {
+            get
+            {
+                return _goToCalendarCommand ?? (_goToCalendarCommand = new RelayCommand(
+                    x =>
+                    {
+                        GoToCalendar();
+                    }));
+            }
+        }
+        public void GoToCalendar()
+        {
+            CurrentWeatherView = _calendarView;
+            //TODO Connecting data of specific weather forecast
+        }
+        #endregion
+
         #region Notes
         public object CurrentNotesView
         {
@@ -141,7 +193,7 @@ namespace WpfApp.ViewModels
 
         public void GoToNote()
         {
-            CurrentWeatherView = _notesViewB;
+            CurrentNotesView = _notesViewB;
             //TODO Connecting data of specific note
         }
         #endregion

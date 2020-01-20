@@ -4,9 +4,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfApp.Views"
+             xmlns:viewModels="clr-namespace:WpfApp.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <viewModels:NewsViewBViewModel/>
+    </UserControl.DataContext>
     <Grid>
+
+        <Image HorizontalAlignment="Left" Height="100" Margin="29,64,0,0" VerticalAlignment="Top" Width="100" Source="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}, Path=Imgurl}"/>
 
     </Grid>
 </UserControl>

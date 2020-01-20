@@ -8,5 +8,6 @@ namespace WpfApp.ViewModels
 {
     class NewsViewBViewModel
     {
+
     }
 }

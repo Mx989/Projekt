@@ -12,11 +12,20 @@
         <DataTemplate DataType="{x:Type viewModels:NewsViewAViewModel}">
             <views:NewsViewA/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:NewsViewBViewModel}">
+            <views:NewsViewB/>
+        </DataTemplate>
         <DataTemplate DataType="{x:Type viewModels:WeatherViewAViewModel}">
             <views:WeatherViewA/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:WeatherViewBViewModel}">
+            <views:WeatherViewB/>
+        </DataTemplate>
         <DataTemplate DataType="{x:Type viewModels:NotesViewAViewModel}">
             <views:NotesViewA/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:NotesViewBViewModel}">
+            <views:NotesViewB/>
         </DataTemplate>
     </Window.Resources>
 
@@ -37,6 +46,12 @@
         <Grid x:Name="NotesGrid" HorizontalAlignment="Left" Height="272" Margin="500,170,0,0" VerticalAlignment="Top" Width="287">
             <ContentControl x:Name="Notes" Content="{Binding CurrentNotesView}" Margin="0,0,-5,-5"/>
         </Grid>
+
+        <Image HorizontalAlignment="Left" Height="38" VerticalAlignment="Top" Width="50" Source="{Binding HomeIcon}" Margin="450,0,0,0">
+            <Image.InputBindings>
+                <MouseBinding Gesture="LeftClick" Command="{Binding GoToHomePageCommand}"/>
+            </Image.InputBindings>
+        </Image>
 
     </Grid>
 </Window>

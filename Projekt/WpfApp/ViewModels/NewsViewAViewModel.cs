@@ -4,12 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
+using System.Windows.Input;
 using NewsApi;
+using WpfApp.Classes;
 
 namespace WpfApp.ViewModels
 {
     class NewsViewAViewModel : ViewModelBase
     {
+       // private ICommand _proceedToNews;
+
         private string _mainNewsTitle = "Example main news title";
         private string _sideNews1Title = "Example side news 1 title";
         private string _sideNews2Title = "Example side news 2 title";
@@ -80,7 +84,6 @@ namespace WpfApp.ViewModels
         {
             //_articles = newsApiLogic.querySearch();
         }
-
 
     }
 }
