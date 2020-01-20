@@ -48,15 +48,7 @@ namespace WpfApp.ViewModels
         //Data Providers
 
         public NewsDataProvider NewsDataProviderClient = new NewsDataProvider();
-        public string url3
-        {
-            get; set;
-        }
-        public string MainImageUrl
-        {
-            get { return NewsDataProviderClient.ArticlesCollection[0].urlToImage; }
-        }
-        
+        public WeatherDataProvider WeatherDataProviderClient = new WeatherDataProvider();
         #endregion
 
         #region Constructor
