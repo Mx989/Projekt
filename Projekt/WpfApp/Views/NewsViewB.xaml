@@ -6,13 +6,13 @@
              xmlns:local="clr-namespace:WpfApp.Views"
              xmlns:viewModels="clr-namespace:WpfApp.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.DataContext>
-        <viewModels:NewsViewBViewModel/>
-    </UserControl.DataContext>
+             d:DesignHeight="450" d:DesignWidth="500">
+
     <Grid>
 
-        <Image HorizontalAlignment="Left" Height="100" Margin="29,64,0,0" VerticalAlignment="Top" Width="100" Source="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}, Path=Imgurl}"/>
+        <Image HorizontalAlignment="Left" Height="203" Margin="28,10,0,0" VerticalAlignment="Top" Width="445" Source="{Binding ImgUrl}" Stretch="UniformToFill"/>
+        <TextBlock HorizontalAlignment="Left" Margin="28,218,0,0" TextWrapping="Wrap" Text="{Binding Title}" VerticalAlignment="Top" Height="40" Width="445" FontWeight="Bold" FontFamily="Arial" FontSize="16" Foreground="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="28,263,0,0" TextWrapping="Wrap" Text="{Binding Content}" VerticalAlignment="Top" RenderTransformOrigin="0.553,-1.281" Height="177" Width="445" Foreground="White" FontFamily="Arial" FontWeight="Bold"/>
 
     </Grid>
 </UserControl>

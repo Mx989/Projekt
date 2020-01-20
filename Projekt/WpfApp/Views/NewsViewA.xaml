@@ -7,9 +7,7 @@
              xmlns:viewModels="clr-namespace:WpfApp.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="500">
-    <UserControl.DataContext>
-        <viewModels:NewsViewAViewModel/>
-    </UserControl.DataContext>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -19,13 +17,17 @@
                 <MouseBinding Gesture="LeftClick" Command="{Binding RelativeSource = {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.GoToNewsCommand}" />
             </Image.InputBindings>
         </Image>
-        <Label x:Name="MainNewsLabel" Content="{Binding MainNewsTitle}" HorizontalAlignment="Left" Margin="0,276,0,0" VerticalAlignment="Top" Height="55" Width="500" Foreground="White" FontFamily="Arial" FontSize="24" FontWeight="Bold" Background="#B2646464"/>
+        <TextBlock x:Name="MainNewsLabel" Text="{Binding MainNewsTitle}" HorizontalAlignment="Left" Margin="0,241,0,0" VerticalAlignment="Top" Height="90" Width="500" Foreground="White" FontFamily="Arial" FontSize="24" FontWeight="Bold" Background="#B2646464" TextWrapping="WrapWithOverflow">
+            <TextBlock.InputBindings>
+                <MouseBinding Gesture="LeftClick" Command="{Binding RelativeSource = {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.GoToNewsCommand}" />
+            </TextBlock.InputBindings>
+        </TextBlock>
         <Image x:Name="SideNews1Photo" HorizontalAlignment="Right" Height="121" Margin="-10,331,334,-2" VerticalAlignment="Top" Width="176" Source="{Binding SideNews1Image}"/>
         <Image x:Name="SideNews2Photo" HorizontalAlignment="Left" Height="121" Margin="161,331,0,-2" VerticalAlignment="Top" Width="186" Source="{Binding SideNews2Image}"/>
         <Image x:Name="SideNews3Photo" HorizontalAlignment="Left" Height="121" Margin="333,331,0,-2" VerticalAlignment="Top" Width="167" Source="{Binding SideNews3Image}"/>
-        <Label x:Name="SideNews1Title" Content="{Binding SideNews1Title}" HorizontalAlignment="Left" Margin="0,416,0,0" VerticalAlignment="Top" Width="166" Background="#B2646464" FontFamily="Arial" FontWeight="Bold" Foreground="White" Height="24"/>
-        <Label x:Name="SideNews2Title" Content="{Binding SideNews2Title}" HorizontalAlignment="Left" Margin="166,416,0,0" VerticalAlignment="Top" Width="167" Background="#B2646464" FontFamily="Arial" FontWeight="Bold" Foreground="White" Height="24"/>
-        <Label x:Name="SideNews3Title" Content="{Binding SideNews3Title}" HorizontalAlignment="Left" Margin="333,416,0,0" VerticalAlignment="Top" Width="167" Background="#B2646464" Foreground="White" FontWeight="Bold" FontFamily="Arial" Height="24"/>
-
+        <TextBlock x:Name="SideNews1Title" Text="{Binding SideNews1Title}" HorizontalAlignment="Left" Margin="0,393,0,0" VerticalAlignment="Top" Width="166" Background="#B2646464" FontFamily="Arial" FontWeight="Bold" Foreground="White" Height="47" TextWrapping="WrapWithOverflow" FontSize="10"/>
+        <TextBlock x:Name="SideNews2Title" Text="{Binding SideNews2Title}" HorizontalAlignment="Left" Margin="166,393,0,0" VerticalAlignment="Top" Width="167" Background="#B2646464" FontFamily="Arial" FontWeight="Bold" Foreground="White" Height="47" TextWrapping="WrapWithOverflow" FontSize="10"/>
+        <TextBlock x:Name="SideNews3Title" Text="{Binding SideNews3Title}" HorizontalAlignment="Left" Margin="333,393,0,0" VerticalAlignment="Top" Width="167" Background="#B2646464" Foreground="White" FontWeight="Bold" FontFamily="Arial" Height="47" TextWrapping="WrapWithOverflow" FontSize="10"/>
+        <Label Content="Powered by NewsApi.org" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Height="23" FontSize="8" FontWeight="Bold" FontFamily="Arial Black" Foreground="White" BorderBrush="Black" BorderThickness="1"/>
     </Grid>
 </UserControl>

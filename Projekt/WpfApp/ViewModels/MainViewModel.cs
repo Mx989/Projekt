@@ -4,8 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Collections.ObjectModel;
 using WpfApp.Views;
 using WpfApp.Classes;
+using WpfApp.DataProviders;
+using NewsApi;
 
 namespace WpfApp.ViewModels
 {
@@ -41,14 +44,30 @@ namespace WpfApp.ViewModels
         private object _currentNotesView;
         private object _notesViewA;
         private object _notesViewB;
+
+        //Data Providers
+
+        public NewsDataProvider NewsDataProviderClient = new NewsDataProvider();
+        public string url3
+        {
+            get; set;
+        }
+        public string MainImageUrl
+        {
+            get { return NewsDataProviderClient.ArticlesCollection[0].urlToImage; }
+        }
+        
         #endregion
 
         #region Constructor
         public MainViewModel()
         {
             //Construct views for news
-            _newsViewA = new NewsViewA();
-            _newsViewB = new NewsViewB();
+            var _newsVMA = new NewsViewAViewModel(NewsDataProviderClient);
+            _newsViewA = new NewsViewA(_newsVMA);
+
+            var _newsVMB = new NewsViewBViewModel(NewsDataProviderClient);
+            _newsViewB = new NewsViewB(_newsVMB);
 
             CurrentNewsView = _newsViewA;
 
@@ -64,6 +83,7 @@ namespace WpfApp.ViewModels
             _notesViewB = new NotesViewB();
 
             CurrentNotesView = _notesViewA;
+
         }
         #endregion
 
@@ -114,6 +134,7 @@ namespace WpfApp.ViewModels
         public void GoToNews()
         {
             CurrentNewsView = _newsViewB;
+            
             //TODO connecting data of specific news
         }
 

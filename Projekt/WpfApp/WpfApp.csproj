@@ -65,6 +65,10 @@
     <Compile Include="Classes\EventArgs.cs" />
     <Compile Include="Classes\EventRaiser.cs" />
     <Compile Include="Classes\RelayCommand.cs" />
+    <Compile Include="DataProviders\DataProviderBase.cs" />
+    <Compile Include="DataProviders\NewsDataProvider.cs" />
+    <Compile Include="DataProviders\NotesDataProvider.cs" />
+    <Compile Include="DataProviders\WeatherDataProvider.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\NewsViewAViewModel.cs" />
     <Compile Include="ViewModels\NewsViewBViewModel.cs" />
