@@ -7,7 +7,7 @@ namespace DailyNotesClasses
 {
     public class DailyNotes
     {
-        public List<Note> Notes { get; }
+        public List<Note> Notes { get; set; }
         private string SavePath = Directory.GetCurrentDirectory() + "\\test.txt";
         public DailyNotes()
         {

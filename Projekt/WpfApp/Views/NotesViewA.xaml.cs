@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp.ViewModels;
 
 namespace WpfApp.Views
 {
@@ -20,9 +21,10 @@ namespace WpfApp.Views
     /// </summary>
     public partial class NotesViewA : UserControl
     {
-        public NotesViewA()
+        public NotesViewA(NotesViewAViewModel vm)
         {
             InitializeComponent();
+            this.DataContext = vm;
         }
     }
 }

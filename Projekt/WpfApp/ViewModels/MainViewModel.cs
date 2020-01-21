@@ -49,6 +49,7 @@ namespace WpfApp.ViewModels
 
         public NewsDataProvider NewsDataProviderClient = new NewsDataProvider();
         public WeatherDataProvider WeatherDataProviderClient = new WeatherDataProvider();
+        public NotesDataProvider NotesDataProviderClient = new NotesDataProvider();
         #endregion
 
         #region Constructor
@@ -75,8 +76,11 @@ namespace WpfApp.ViewModels
             CurrentWeatherView = _weatherViewA;
 
             //Construct views for notes
-            _notesViewA = new NotesViewA();
-            _notesViewB = new NotesViewB();
+            var _notesVMA = new NotesViewAViewModel(NotesDataProviderClient);
+            _notesViewA = new NotesViewA(_notesVMA);
+
+            var _notesVMB = new NotesViewBViewModel(NotesDataProviderClient);
+            _notesViewB = new NotesViewB(_notesVMB);
 
             CurrentNotesView = _notesViewA;
 
