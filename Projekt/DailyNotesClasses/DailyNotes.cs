@@ -38,7 +38,10 @@ namespace DailyNotesClasses
             if (Notes.Count > 300) throw new IndexOutOfRangeException("Maximum amount of Notes is 300");
         }
 
-
+        public int GetNoteId(string content)
+        {
+            return (Notes.Find(x => x.Content == content)).Id;
+        }
 
         public void SaveNotes()
         {
