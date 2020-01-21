@@ -69,6 +69,7 @@
     <Compile Include="DataProviders\NewsDataProvider.cs" />
     <Compile Include="DataProviders\NotesDataProvider.cs" />
     <Compile Include="DataProviders\WeatherDataProvider.cs" />
+    <Compile Include="Models\PreparedForecast.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\NewsViewAViewModel.cs" />
     <Compile Include="ViewModels\NewsViewBViewModel.cs" />
@@ -166,9 +167,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\AccuWeatherApi\AccuWeatherApi.csproj">
       <Project>{5b7d6cc1-80f3-4f0a-97a7-751a8f55eabd}</Project>
@@ -184,7 +183,127 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Views\photo.png" />
+    <Resource Include="1-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\1-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\2-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\3-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\4-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\5-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\6-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\7-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\8-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\11-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\12-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\13-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\14-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\15-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\16-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\17-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\18-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\19-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\20-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\21-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\22-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\23-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\24-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\25-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\26-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\29-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\30-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\31-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\32-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\33-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\34-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\35-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\36-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\37-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\38-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\39-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\40-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\41-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\42-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\43-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\44-s.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

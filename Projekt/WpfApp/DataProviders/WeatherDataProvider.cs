@@ -7,7 +7,7 @@ using AccuWeatherApi;
 
 namespace WpfApp.DataProviders
 {
-    class WeatherDataProvider : DataProviderBase
+    public class WeatherDataProvider : DataProviderBase
     {
         private List<CitySearch> _citySearches;
         public List<HourlyForecast> HourlyForecastList;
@@ -19,7 +19,7 @@ namespace WpfApp.DataProviders
             _citySearches = AccuWeatherLogic.getLocation(apiToken, query);
 
             HourlyForecastList = AccuWeatherLogic.getHourlyForecast(apiToken, _citySearches[0].Key);
-            CurrentForecast = HourlyForecastList[0];    //TODO hour recognition
+            CurrentForecast = HourlyForecastList[0];   
         }
 
     }

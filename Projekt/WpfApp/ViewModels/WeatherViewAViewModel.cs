@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
+using WpfApp.DataProviders;
 using AccuWeatherApi;
 
 namespace WpfApp.ViewModels
 {
-    class WeatherViewAViewModel
+    public class WeatherViewAViewModel : ViewModelBase
     {
+        private WeatherDataProvider _weatherDataProvider;
         public string Date
         {
             get { return DateTime.Now.ToString(); }
@@ -21,30 +23,26 @@ namespace WpfApp.ViewModels
         }
         public string CurrentWeatherImage//TEMPORARY
         {
-            get { return "https://cdn1.iconfinder.com/data/icons/weather-forecast-meteorology-color-1/128/weather-sunny-512.png"; }
+            get { return "Resources/" + _weatherDataProvider.HourlyForecastList[0].WeatherIcon.ToString() + "-s.png"; }
         }
-
-        private string _currentTemperature = "30°C";
 
         public string CurrentTemperature
         {
-            get { return _currentTemperature; }
+            get { return _weatherDataProvider.HourlyForecastList[0].Temperature.Value.ToString() + "°C"; }
         }
         public string NextHourWeatherImage//TEMPORARY
         {
-            get { return "https://cdn1.iconfinder.com/data/icons/weather-forecast-meteorology-color-1/128/weather-sunny-512.png"; }
+            get { return "Resources/" + _weatherDataProvider.HourlyForecastList[1].WeatherIcon.ToString() + "-s.png"; }
         }
-
-        private string _nextHourTemperature = "24°C";
         
         public string NextHourTemperature
         {
-            get { return _nextHourTemperature; }
+            get { return _weatherDataProvider.HourlyForecastList[1].Temperature.Value.ToString() + "°C"; }
         }
         
-        public WeatherViewAViewModel()
+        public WeatherViewAViewModel(WeatherDataProvider weatherDataProvider)
         {
-
+            _weatherDataProvider = weatherDataProvider;
         }
     }
 }

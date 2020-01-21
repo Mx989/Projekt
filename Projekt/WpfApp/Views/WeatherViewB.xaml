@@ -6,11 +6,25 @@
              xmlns:viewModels="clr-namespace:WpfApp.ViewModels"
              xmlns:local="clr-namespace:WpfApp.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.DataContext>
-        <viewModels:WeatherViewBViewModel/>
-    </UserControl.DataContext>
+             d:DesignHeight="170" d:DesignWidth="300">
     <Grid>
-            
+        <ScrollViewer HorizontalAlignment="Left" Width="280" Margin="0 0 0 0" VerticalAlignment="Top" Height="170" VerticalScrollBarVisibility="Visible">
+            <StackPanel HorizontalAlignment="Left"  CanVerticallyScroll="True">
+                <ItemsControl ItemsSource="{Binding Path=PreparedForecastsCollection}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{Binding ImgUrl}"/>
+                                <TextBlock Text="{Binding Date.Hour}" Margin="3 5 3 5" FontSize="14" FontWeight="Bold" FontFamily="Arial" Foreground="White"/>
+                                <TextBlock Text="{Binding Temperature}" Margin="3 5 3 5" FontSize="14" FontWeight="Bold" FontFamily="Arial" Foreground="White"/>
+                                <TextBlock Text="{Binding PrecipitationIntensity}" Margin="3 5 3 5" FontSize="14" FontWeight="Bold" FontFamily="Arial" Foreground="White"/>
+                                <TextBlock Text="{Binding PrecipitationType}" Margin="3 5 3 5" FontSize="14" FontWeight="Bold" FontFamily="Arial" Foreground="White"/>
+                                <TextBlock Text="{Binding PrecipitationProbability}" Margin="3 5 3 5" FontSize="14" FontWeight="Bold" FontFamily="Arial" Foreground="White"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>     
+        </ScrollViewer>
     </Grid>
 </UserControl>

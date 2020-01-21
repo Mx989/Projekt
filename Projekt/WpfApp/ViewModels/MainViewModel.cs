@@ -64,8 +64,12 @@ namespace WpfApp.ViewModels
             CurrentNewsView = _newsViewA;
 
             //Construct views for weather
-            _weatherViewA = new WeatherViewA();
-            _weatherViewB = new WeatherViewB();
+            var _weatherVMA = new WeatherViewAViewModel(WeatherDataProviderClient);
+            _weatherViewA = new WeatherViewA(_weatherVMA);
+
+            var _weatherVMB = new WeatherViewBViewModel(WeatherDataProviderClient);
+            _weatherViewB = new WeatherViewB(_weatherVMB);
+            
             _calendarView = new CalendarView();
 
             CurrentWeatherView = _weatherViewA;

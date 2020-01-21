@@ -32,8 +32,11 @@ namespace WpfApp.DataProviders
         {
             _categories.Add("general");
             _articlesList = newsApiLogic.getTopHeadlines("70e25f57e97c41758d9b6bb6e0ad6397", _categories);
-            _articlesCollection = CreateObservableCollectionFromList(_articlesList);
-            
+            _articlesCollection = new ObservableCollection<Articles>();
+            foreach (var element in _articlesList)
+            {
+                _articlesCollection.Add(element);
+            }
         }
 
 
