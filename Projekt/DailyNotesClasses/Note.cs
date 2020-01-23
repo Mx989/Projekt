@@ -13,8 +13,7 @@ namespace DailyNotesClasses
             
             //if (_content.Trim().Length < 5) throw new ArgumentException("Note length can't be < than 5 characters!");
             if (_content.Trim().Length > 300) throw new ArgumentException("Note length can't be > than 300 characters!");
-            if (_id == 0) Id = RandomNumber(0, 9999999);
-            else Id = _id;
+            this.Id = _id;
             this.Content = _content;
             this.PublicationDate = DateTime.Now.ToString("yyyy-MM-dd");
             

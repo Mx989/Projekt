@@ -10,15 +10,8 @@ namespace ProjektTests
         [TestMethod]
         public void Note_Create_Correct_Note()
         {
-            Note note = new Note(1, "Test Note", "23-01-2020");
-            Assert.AreEqual("23-01-2020", note.PublicationDate);
+            Note note = new Note(1, "Test Note");
             Assert.AreEqual("Test Note", note.Content);
-        }
-        [TestMethod]
-        public void Note_Exception_Content_Too_Short()
-        {
-            Assert.ThrowsException<ArgumentException>(() =>new Note(1, "T", "23-01-2020")); 
-            
         }
         [TestMethod]
         public void Note_Exception_Content_Too_Long()
@@ -28,7 +21,7 @@ namespace ProjektTests
             {
                 content = content + i.ToString();
             }
-            Assert.ThrowsException<ArgumentException>(() => new Note(1, content, "23-01-2020"));
+            Assert.ThrowsException<ArgumentException>(() => new Note(1, content));
         }
 
         [TestMethod]
@@ -58,7 +51,7 @@ namespace ProjektTests
             DailyNotes instance = new DailyNotes();
             instance.addNote("First Note");
             instance.addNote("Second Note");
-            instance.deleteNote(0);
+            instance.deleteNote(1);
             Assert.AreEqual("Second Note", instance.Notes[0].Content);
         }
     }

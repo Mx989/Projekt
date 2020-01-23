@@ -19,7 +19,7 @@ namespace DailyNotesClasses
         public void addNote(string content)
         {
                 CheckLength();
-                Notes.Add(new Note(Notes.Count,content));
+                Notes.Add(new Note(Notes.Count+1,content));
         }
 
         public void deleteNote(int noteId)

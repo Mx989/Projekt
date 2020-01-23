@@ -7,13 +7,15 @@ namespace DailyNotesConsole
     {
         static void Main(string[] args)
         {
+            DailyNotes instance = new DailyNotes();
+            instance.addNote("First Note");
+            instance.addNote("Second Note");
+            instance.deleteNote(1);
 
-            DailyNotes notesList = new DailyNotes();
-            Console.WriteLine(notesList.Notes.Count);
-
-           var note = new Note(1, "T", "23-01-2020");
-           Console.WriteLine(note);
-
+            foreach (Note note in instance.Notes)
+            {
+                Console.WriteLine(note.Id);
+            }
         }
     }
 }

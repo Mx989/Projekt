@@ -15,8 +15,6 @@ namespace NewsApi
         //apiKey=46491296cc1342edb76a89e49524896a
 
 
-
-
         /// <summary>
         /// 
         /// </summary>

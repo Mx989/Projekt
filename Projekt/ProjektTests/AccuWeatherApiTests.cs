@@ -17,14 +17,33 @@ namespace ProjektTests
         {
             var result = AccuWeatherLogic.getLocation(apiToken,query);
             Assert.IsNotNull(result);
+
+        }
+
+        [TestMethod]
+        public void GetLocation_Returns_List_Of_Cities_Is_Not_Empty()
+        {
+            var result = AccuWeatherLogic.getLocation(apiToken, query);
+            bool isEmpty = result.Count > 0 ? false : true;
+            Assert.IsFalse(isEmpty);
+
         }
 
         [TestMethod]
         public void getDailyForecast_Returns_Forecast()
         {
-            var result = AccuWeatherLogic.getDailyForecast(apiToken, query);
+            Forecast result = AccuWeatherLogic.getDailyForecast(apiToken, query);
+
 
             Assert.IsNotNull(result);
+        }
+
+        public void getDailyForecast_Returns_Forecast_Is_Not_Empty()
+        {
+            Forecast result = AccuWeatherLogic.getDailyForecast(apiToken, query);
+            bool isEmpty = result.DailyForecasts.Count > 0 ? false : true;
+            Assert.IsFalse(isEmpty);
+
         }
 
         [TestMethod]
