@@ -59,9 +59,6 @@ namespace WpfApp.ViewModels
             var _newsVMA = new NewsViewAViewModel(NewsDataProviderClient);
             _newsViewA = new NewsViewA(_newsVMA);
 
-            var _newsVMB = new NewsViewBViewModel(NewsDataProviderClient);
-            _newsViewB = new NewsViewB(_newsVMB);
-
             CurrentNewsView = _newsViewA;
 
             //Construct views for weather
@@ -83,8 +80,8 @@ namespace WpfApp.ViewModels
             _notesViewB = new NotesViewB(_notesVMB);
 
             CurrentNotesView = _notesViewA;
-
         }
+
         #endregion
 
         #region Navigation
@@ -133,9 +130,11 @@ namespace WpfApp.ViewModels
 
         public void GoToNews()
         {
+            var _newsVMB = new NewsViewBViewModel(NewsDataProviderClient);
+            _newsViewB = new NewsViewB(_newsVMB);
+
             CurrentNewsView = _newsViewB;
             
-            //TODO connecting data of specific news
         }
 
         #endregion

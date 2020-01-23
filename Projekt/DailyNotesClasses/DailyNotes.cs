@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
+
 namespace DailyNotesClasses
 {
     public class DailyNotes
@@ -34,6 +35,11 @@ namespace DailyNotesClasses
         public int GetNoteId(string content)
         {
             return (Notes.Find(x => x.Content == content)).Id;
+        }
+
+        public bool NoteOnThatIdExist(int id)
+        {
+            return (Notes.Find(x => x.Id == id)) != null;
         }
 
         public void SaveNotes()

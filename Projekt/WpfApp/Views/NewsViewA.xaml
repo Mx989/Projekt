@@ -22,9 +22,21 @@
                 <MouseBinding Gesture="LeftClick" Command="{Binding RelativeSource = {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.GoToNewsCommand}" />
             </TextBlock.InputBindings>
         </TextBlock>
-        <Image x:Name="SideNews1Photo" HorizontalAlignment="Right" Height="121" Margin="-10,331,334,-2" VerticalAlignment="Top" Width="176" Source="{Binding SideNews1Image}"/>
-        <Image x:Name="SideNews2Photo" HorizontalAlignment="Left" Height="121" Margin="161,331,0,-2" VerticalAlignment="Top" Width="186" Source="{Binding SideNews2Image}"/>
-        <Image x:Name="SideNews3Photo" HorizontalAlignment="Left" Height="121" Margin="333,331,0,-2" VerticalAlignment="Top" Width="167" Source="{Binding SideNews3Image}"/>
+        <Image x:Name="SideNews1Photo" HorizontalAlignment="Right" Height="121" Margin="-10,331,334,-2" VerticalAlignment="Top" Width="176" Source="{Binding SideNews1Image}">
+            <Image.InputBindings>
+                <MouseBinding Gesture="LeftClick" Command="{Binding Switch1Command}" />
+            </Image.InputBindings>
+        </Image>
+        <Image x:Name="SideNews2Photo" HorizontalAlignment="Left" Height="121" Margin="161,331,0,-2" VerticalAlignment="Top" Width="186" Source="{Binding SideNews2Image}">
+            <Image.InputBindings>
+                <MouseBinding Gesture="LeftClick" Command="{Binding Switch2Command}" />
+            </Image.InputBindings>
+        </Image>
+        <Image x:Name="SideNews3Photo" HorizontalAlignment="Left" Height="121" Margin="333,331,0,-2" VerticalAlignment="Top" Width="167" Source="{Binding SideNews3Image}">
+            <Image.InputBindings>
+                <MouseBinding Gesture="LeftClick" Command="{Binding Switch3Command}" />
+            </Image.InputBindings>
+        </Image>
         <TextBlock x:Name="SideNews1Title" Text="{Binding SideNews1Title}" HorizontalAlignment="Left" Margin="0,393,0,0" VerticalAlignment="Top" Width="166" Background="#B2646464" FontFamily="Arial" FontWeight="Bold" Foreground="White" Height="47" TextWrapping="WrapWithOverflow" FontSize="10"/>
         <TextBlock x:Name="SideNews2Title" Text="{Binding SideNews2Title}" HorizontalAlignment="Left" Margin="166,393,0,0" VerticalAlignment="Top" Width="167" Background="#B2646464" FontFamily="Arial" FontWeight="Bold" Foreground="White" Height="47" TextWrapping="WrapWithOverflow" FontSize="10"/>
         <TextBlock x:Name="SideNews3Title" Text="{Binding SideNews3Title}" HorizontalAlignment="Left" Margin="333,393,0,0" VerticalAlignment="Top" Width="167" Background="#B2646464" Foreground="White" FontWeight="Bold" FontFamily="Arial" Height="47" TextWrapping="WrapWithOverflow" FontSize="10"/>

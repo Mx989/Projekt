@@ -14,7 +14,7 @@ namespace WpfApp.ViewModels
     public class NotesViewAViewModel: ViewModelBase
     {
         //public NotesDataProvider NotesDataProviderClient;
-        private ObservableCollection<string> _notesList = new ObservableCollection<string>();
+        private ObservableCollection<Note> _notesList = new ObservableCollection<Note>();
         DailyNotes dailyNotes = new DailyNotes();
 
         private string _newOne = "";
@@ -35,25 +35,72 @@ namespace WpfApp.ViewModels
             }
         }
 
-        public ObservableCollection<string> NotesList
+        public ObservableCollection<Note> NotesList
         {
             get { return _notesList; }
             set
             {
-                if(_notesList != value)
+                foreach(var note in value)
                 {
-                    _notesList = value;
-                    OnPropertyChanged("NotesList");
-                    _notesList.Add("");
+                    if (dailyNotes.NoteOnThatIdExist(note.Id))
+                    {
+                        dailyNotes.deleteNote(note.Id);
+                        dailyNotes.addNote(note.Content);
+                        dailyNotes.SaveNotes();
+                        ReloadNotes();
+                        OnPropertyChanged("NotesList");
+                    }
+                    else
+                    {
+                        dailyNotes.addNote(note.Content);
+                        dailyNotes.SaveNotes();
+                        ReloadNotes();
+                        OnPropertyChanged("NotesList");
+                    }
                 }
             }
         }
         public NotesViewAViewModel(NotesDataProvider notesDataProvider)
         {
-            _notesList.Add("ddd");
-        
+            ReloadNotes();
+
+            if(_notesList[_notesList.Count-1].Content != "")
+            {
+                _notesList.Add(new Note(RandomNumber(0, 9999999), ""));
+            }
         }
 
+        public void ReloadNotes()
+        {
+            foreach (var note in dailyNotes.Notes)
+            {
+                _notesList.Add(note);
+            }
+        }
+        public int RandomNumber(int min, int max)
+        {
+            Random random = new Random();
+            return random.Next(min, max);
+        }
+        
+        private ICommand _addNoteCommand;
 
+        public object AddNoteCommand
+        {
+            get
+            {
+                return _addNoteCommand ?? (_addNoteCommand = new RelayCommand(
+                    x =>
+                    {
+                        AddNote();
+                    }));
+            }
+        }
+
+        public void AddNote()
+        {
+            _notesList.Add(new Note(RandomNumber(0, 9999999), ""));
+            OnPropertyChanged("NotesList");
+        }
     }
 }

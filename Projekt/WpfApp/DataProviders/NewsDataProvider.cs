@@ -37,8 +37,18 @@ namespace WpfApp.DataProviders
             {
                 _articlesCollection.Add(element);
             }
+            //Task.Run(NextImage);
         }
 
+        public async Task NextImage()
+        {
+            while (true)
+            { 
+            ArticlesCollection.Move(0, ArticlesCollection.Count - 1);
+            await Task.Delay(1000);
+                OnPropertyChanged("MainNewsImage");
+            }
+        }
 
     }    
 
