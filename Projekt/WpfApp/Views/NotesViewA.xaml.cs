@@ -25,6 +25,7 @@ namespace WpfApp.Views
         {
             InitializeComponent();
             this.DataContext = vm;
+             
         }
     }
 }

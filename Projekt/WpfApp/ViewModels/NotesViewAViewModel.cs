@@ -13,76 +13,39 @@ namespace WpfApp.ViewModels
 {
     public class NotesViewAViewModel: ViewModelBase
     {
-        //public NotesDataProvider NotesDataProviderClient;
+        #region Properties
         private ObservableCollection<Note> _notesList = new ObservableCollection<Note>();
         DailyNotes dailyNotes = new DailyNotes();
-
-        private string _newOne = "";
-        public string NewOne        //need to perform that action for every value from ObservableCollection
-        {
-            get { return _newOne; }
-            set
-            {
-                if(_newOne != value)
-                {
-                   // dailyNotes.deleteNote(dailyNotes.GetNoteId(value));
-
-                    _newOne = value;
-                    dailyNotes.addNote(_newOne);
-                    dailyNotes.SaveNotes();
-                    OnPropertyChanged("NewOne");
-                }
-            }
-        }
 
         public ObservableCollection<Note> NotesList
         {
             get { return _notesList; }
-            set
-            {
-                foreach(var note in value)
-                {
-                    if (dailyNotes.NoteOnThatIdExist(note.Id))
-                    {
-                        dailyNotes.deleteNote(note.Id);
-                        dailyNotes.addNote(note.Content);
-                        dailyNotes.SaveNotes();
-                        ReloadNotes();
-                        OnPropertyChanged("NotesList");
-                    }
-                    else
-                    {
-                        dailyNotes.addNote(note.Content);
-                        dailyNotes.SaveNotes();
-                        ReloadNotes();
-                        OnPropertyChanged("NotesList");
-                    }
-                }
-            }
         }
+        #endregion
+
+        #region Constructor
         public NotesViewAViewModel(NotesDataProvider notesDataProvider)
         {
-            ReloadNotes();
-
-            if(_notesList[_notesList.Count-1].Content != "")
-            {
-                _notesList.Add(new Note(RandomNumber(0, 9999999), ""));
-            }
+            LoadNotes();
         }
 
-        public void ReloadNotes()
+        public void LoadNotes()
         {
             foreach (var note in dailyNotes.Notes)
             {
                 _notesList.Add(note);
             }
         }
+        #endregion
+        
         public int RandomNumber(int min, int max)
         {
             Random random = new Random();
             return random.Next(min, max);
         }
-        
+
+        #region Commands
+
         private ICommand _addNoteCommand;
 
         public object AddNoteCommand
@@ -102,5 +65,54 @@ namespace WpfApp.ViewModels
             _notesList.Add(new Note(RandomNumber(0, 9999999), ""));
             OnPropertyChanged("NotesList");
         }
+
+        private ICommand _saveNotesCommand;
+
+        public object SaveNotesCommand
+        {
+            get
+            {
+                return _saveNotesCommand ?? (_saveNotesCommand = new RelayCommand(
+                    x =>
+                    {
+                        SaveNotes();
+                    }));
+            }
+        }
+
+        public void SaveNotes()
+        {
+            dailyNotes.DeleteAllNotes();
+            foreach(var note in NotesList)
+            {
+                dailyNotes.addNote(note.Content);
+            }
+            dailyNotes.SaveNotes();
+            OnPropertyChanged("NotesList");
+        }
+
+
+        private ICommand _deleteNotesCommand;
+
+        public object DeleteNotesCommand
+        {
+            get
+            {
+                return _deleteNotesCommand ?? (_deleteNotesCommand = new RelayCommand(
+                    x =>
+                    {
+                        DeleteNotes();
+                    }));
+            }
+        }
+
+        public void DeleteNotes()
+        {
+            _notesList.Clear();
+            dailyNotes.DeleteAllNotes();
+            dailyNotes.SaveNotes();
+            OnPropertyChanged("NotesList");
+        }
+        #endregion
     }
 }

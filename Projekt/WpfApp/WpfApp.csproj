@@ -80,7 +80,6 @@
     <Compile Include="ViewModels\NewsViewAViewModel.cs" />
     <Compile Include="ViewModels\NewsViewBViewModel.cs" />
     <Compile Include="ViewModels\NotesViewAViewModel.cs" />
-    <Compile Include="ViewModels\NotesViewBViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\WeatherViewAViewModel.cs" />
     <Compile Include="ViewModels\WeatherViewBViewModel.cs" />
@@ -95,9 +94,6 @@
     </Compile>
     <Compile Include="Views\NotesViewA.xaml.cs">
       <DependentUpon>NotesViewA.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\NotesViewB.xaml.cs">
-      <DependentUpon>NotesViewB.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\WeatherViewA.xaml.cs">
       <DependentUpon>WeatherViewA.xaml</DependentUpon>
@@ -130,10 +126,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\NotesViewA.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\NotesViewB.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

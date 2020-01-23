@@ -6,25 +6,26 @@
              xmlns:local="clr-namespace:WpfApp.Views"
              xmlns:viewModels="clr-namespace:WpfApp.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="280" d:DesignWidth="300" Margin="0 0 0 0" Padding="0 0 0 0">
+             d:DesignHeight="280" Margin="0 0 0 0" Padding="0 0 0 0" Width="290">
 
     <Grid>
-        <!--<Button x:Name="button" Content="Example Note" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="60" Background="White" Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.GoToNoteCommand}"/>-->
-        <ScrollViewer HorizontalAlignment="Left" Width="300" Margin="0 0 0 0" VerticalAlignment="Top" Height="280" VerticalScrollBarVisibility="Visible">
+        <ScrollViewer HorizontalAlignment="Left" Width="290" Margin="0 0 0 0" VerticalAlignment="Top" Height="280" VerticalScrollBarVisibility="Visible">
             <StackPanel HorizontalAlignment="Left">
                 <ItemsControl ItemsSource="{Binding Path=NotesList}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <TextBox Text="{Binding Path=Content, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="300" Background="White" TextWrapping="WrapWithOverflow" Padding="3"/>
+                                <TextBox Text="{Binding Path=Content, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="270" Background="White" TextWrapping="WrapWithOverflow" Padding="3">
+                                </TextBox>
                             </StackPanel>
                         </DataTemplate>
-                    </ItemsControl.ItemTemplate>                    
+                    </ItemsControl.ItemTemplate>
                 </ItemsControl>
             </StackPanel>
         </ScrollViewer>
-        <TextBox Text="{Binding Path=NewOne, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="300" Background="White" TextWrapping="WrapWithOverflow" Padding="3"/>
-
+        <Button Content="Add Note" Command="{Binding AddNoteCommand}" Height="30" Margin="10,240,220,10"/>
+        <Button Content="Save" Command="{Binding SaveNotesCommand}" Height="30" Margin="105,240,129,10" RenderTransformOrigin="0.893,0.433"/>
+        <Button Content="Delete Notes" Command="{Binding DeleteNotesCommand}" Height="30"  Margin="188,240,31,10"/>
 
     </Grid>
 </UserControl>

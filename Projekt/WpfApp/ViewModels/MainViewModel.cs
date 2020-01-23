@@ -39,11 +39,9 @@ namespace WpfApp.ViewModels
         private object _calendarView;
 
         //Notes
-        private ICommand _goToNoteCommand;
 
         private object _currentNotesView;
         private object _notesViewA;
-        private object _notesViewB;
 
         //Data Providers
 
@@ -75,9 +73,6 @@ namespace WpfApp.ViewModels
             //Construct views for notes
             var _notesVMA = new NotesViewAViewModel(NotesDataProviderClient);
             _notesViewA = new NotesViewA(_notesVMA);
-
-            var _notesVMB = new NotesViewBViewModel(NotesDataProviderClient);
-            _notesViewB = new NotesViewB(_notesVMB);
 
             CurrentNotesView = _notesViewA;
         }
@@ -197,24 +192,6 @@ namespace WpfApp.ViewModels
                 _currentNotesView = value;
                 OnPropertyChanged("CurrentNotesView");
             }
-        }
-
-        public object GoToNoteCommand
-        {
-            get
-            {
-                return _goToNoteCommand ?? (_goToNoteCommand = new RelayCommand(
-                    x =>
-                    {
-                        GoToNote();
-                    }));
-            }
-        }
-
-        public void GoToNote()
-        {
-            CurrentNotesView = _notesViewB;
-            //TODO Connecting data of specific note
         }
         #endregion
     }

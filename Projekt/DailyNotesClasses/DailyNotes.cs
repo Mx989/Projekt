@@ -8,7 +8,7 @@ namespace DailyNotesClasses
 {
     public class DailyNotes
     {
-        public List<Note> Notes { get; }
+        public List<Note> Notes { get; set; }
         private string SavePath = Directory.GetCurrentDirectory() + "\\test.txt";
         public DailyNotes()
         {
@@ -25,6 +25,12 @@ namespace DailyNotesClasses
         public void deleteNote(int noteId)
         {
             Notes.RemoveAll(x => x.Id == noteId);
+        }
+
+        public void DeleteAllNotes()
+        {
+            Notes = new List<Note>();
+            SaveNotes();
         }
 
         private void CheckLength()
