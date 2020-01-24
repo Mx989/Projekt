@@ -33,5 +33,19 @@ namespace ProjektTests
         }
 
 
+        [TestMethod]
+        public void querySearch_Returns_List()
+        {
+            List<Articles> result = newsApiLogic.querySearch(token, "President");
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void querySearch_Returns_Null()
+        {
+            List<Articles> result = newsApiLogic.querySearch(token, "");
+            Assert.IsNull(result);
+        }
+
     }
 }
