@@ -8,19 +8,24 @@
              mc:Ignorable="d" 
              d:DesignHeight="170" d:DesignWidth="300">
     <Grid>
-        <ScrollViewer HorizontalAlignment="Left" Width="280" Margin="0 0 0 0" VerticalAlignment="Top" Height="170" VerticalScrollBarVisibility="Visible">
+        <ScrollViewer HorizontalAlignment="Left" Width="283" Margin="0 0 0 0" VerticalAlignment="Top" Height="170" VerticalScrollBarVisibility="Visible">
             <StackPanel HorizontalAlignment="Left"  CanVerticallyScroll="True">
                 <ItemsControl ItemsSource="{Binding Path=PreparedForecastsCollection}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <Image Source="{Binding ImgUrl}"/>
-                                <TextBlock Text="{Binding Date.Hour}" Margin="3 5 3 5" FontSize="14" FontWeight="Bold" FontFamily="Arial" Foreground="White"/>
-                                <TextBlock Text="{Binding Temperature}" Margin="3 5 3 5" FontSize="14" FontWeight="Bold" FontFamily="Arial" Foreground="White"/>
-                                <TextBlock Text="{Binding PrecipitationIntensity}" Margin="3 5 3 5" FontSize="14" FontWeight="Bold" FontFamily="Arial" Foreground="White"/>
-                                <TextBlock Text="{Binding PrecipitationType}" Margin="3 5 3 5" FontSize="14" FontWeight="Bold" FontFamily="Arial" Foreground="White"/>
-                                <TextBlock Text="{Binding PrecipitationProbability}" Margin="3 5 3 5" FontSize="14" FontWeight="Bold" FontFamily="Arial" Foreground="White"/>
-                            </StackPanel>
+                            <Border BorderThickness="1" BorderBrush="White">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{Binding ImgUrl}"/>
+                                    <Border BorderBrush="White" BorderThickness="0 0 2 0">
+                                        <TextBlock Text="{Binding FullHour}" Margin="1 2 1 2" FontSize="12" FontWeight="Bold" FontFamily="Arial" Foreground="White"/>
+                                    </Border>
+                                    <Border BorderBrush="White" BorderThickness="0 0 2 0">
+                                        <TextBlock Text="{Binding Temperature}" Margin="1 2 1 2" FontSize="12" FontWeight="Bold" FontFamily="Arial" Foreground="White"/>
+                                    </Border>
+                                    <TextBlock Text="{Binding Precipitation}" Margin="1 2 1 2" FontSize="12" FontWeight="Bold" FontFamily="Arial" Foreground="White"/>
+                                    <TextBlock Text="{Binding PrecipitationProbability}" Margin="1 2 1 2" FontSize="12" FontWeight="Bold" FontFamily="Arial" Foreground="White"/>
+                                </StackPanel>
+                            </Border>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>

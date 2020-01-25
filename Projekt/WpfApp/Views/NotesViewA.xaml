@@ -9,14 +9,13 @@
              d:DesignHeight="280" Margin="0 0 0 0" Padding="0 0 0 0" Width="290">
 
     <Grid>
-        <ScrollViewer HorizontalAlignment="Left" Width="290" Margin="0 0 0 0" VerticalAlignment="Top" Height="280" VerticalScrollBarVisibility="Visible">
+        <ScrollViewer HorizontalAlignment="Left" Width="290" Margin="0 0 0 0" VerticalAlignment="Top" Height="280" VerticalScrollBarVisibility="Visible" Background="#FF181432">
             <StackPanel HorizontalAlignment="Left">
                 <ItemsControl ItemsSource="{Binding Path=NotesList}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <TextBox Text="{Binding Path=Content, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="270" Background="White" TextWrapping="WrapWithOverflow" Padding="3">
-                                </TextBox>
+                                <TextBox Text="{Binding Path=Content, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="262" Background="White" TextWrapping="WrapWithOverflow" Padding="3" Margin="4 2 4 4"/>
                             </StackPanel>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>

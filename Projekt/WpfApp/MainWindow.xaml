@@ -39,12 +39,12 @@
             <ContentControl x:Name="News" Content="{Binding CurrentNewsView}"/>
         </Grid>
 
-        <Grid HorizontalAlignment="Left" x:Name="WeatherGrid" Height="170" Margin="500,0,-605,0" VerticalAlignment="Top" Width="292" Background="#FF1E3DC7" >
+        <Grid HorizontalAlignment="Left" x:Name="WeatherGrid" Height="170" Margin="500,0,-605,0" VerticalAlignment="Top" Width="292" Background="#FF1C2C72" >
             <ContentControl x:Name="Weather" Content="{Binding CurrentWeatherView}"/>
         </Grid>
 
         <Grid x:Name="NotesGrid" HorizontalAlignment="Left" Height="272" Margin="500,170,0,0" VerticalAlignment="Top" Width="287">
-            <ContentControl x:Name="Notes" Content="{Binding CurrentNotesView}" Margin="0,0,-5,-5"/>
+            <ContentControl x:Name="Notes" Content="{Binding CurrentNotesView}" Margin="0,0,-5,-5" Background="#FF181432"/>
         </Grid>
 
         <Image HorizontalAlignment="Left" Height="38" VerticalAlignment="Top" Width="50" Source="{Binding HomeIcon}" Margin="450,0,0,0">
