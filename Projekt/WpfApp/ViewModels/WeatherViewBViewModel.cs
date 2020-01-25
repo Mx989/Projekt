@@ -12,13 +12,16 @@ namespace WpfApp.ViewModels
 {
     public class WeatherViewBViewModel : ViewModelBase
     {
+        #region Properties
         private WeatherDataProvider _weatherDataProvider;
         private ObservableCollection<PreparedForecast> _preparedForecastsCollection;
         public ObservableCollection<PreparedForecast> PreparedForecastsCollection
         {
             get { return _preparedForecastsCollection; }
         }
-        
+        #endregion
+
+        #region Constructor
         public WeatherViewBViewModel(WeatherDataProvider weatherDataProvider)
         {
             _weatherDataProvider = weatherDataProvider;
@@ -26,7 +29,6 @@ namespace WpfApp.ViewModels
             _preparedForecastsCollection = new ObservableCollection<PreparedForecast>();
 
             DateTime date = DateTime.Parse(_weatherDataProvider.HourlyForecastList[0].DateTime);
-
 
             foreach(var element in _weatherDataProvider.HourlyForecastList)
             {
@@ -46,6 +48,7 @@ namespace WpfApp.ViewModels
 
 
         }
+        #endregion
 
 
 

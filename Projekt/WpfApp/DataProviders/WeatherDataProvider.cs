@@ -9,9 +9,13 @@ namespace WpfApp.DataProviders
 {
     public class WeatherDataProvider : DataProviderBase
     {
+        #region Properties
         private List<CitySearch> _citySearches;
         public List<HourlyForecast> HourlyForecastList;
         public HourlyForecast CurrentForecast;
+        #endregion
+
+        #region Constructor
         public WeatherDataProvider()
         {
             string apiToken = "c6eMCGjH1pvf1hvI47hLVKcRrA2R41gr";
@@ -21,6 +25,6 @@ namespace WpfApp.DataProviders
             HourlyForecastList = AccuWeatherLogic.getHourlyForecast(apiToken, _citySearches[0].Key);
             CurrentForecast = HourlyForecastList[0];   
         }
-
+        #endregion
     }
 }

@@ -7,7 +7,7 @@
         xmlns:viewModels="clr-namespace:WpfApp.ViewModels"
         xmlns:views="clr-namespace:WpfApp.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="478" Width="800" Background="{x:Null}">
+        Title="WakeApp!" Height="478" Width="800" Background="{x:Null}" Icon="wakeappico.png">
    <!-- <Window.Resources>
         <DataTemplate DataType="{x:Type viewModels:NewsViewAViewModel}">
             <views:NewsViewA/>

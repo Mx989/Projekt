@@ -12,6 +12,7 @@ namespace WpfApp.DataProviders
 {
     public class NewsDataProvider : DataProviderBase
     {
+        #region Properties
         private List<Articles> _articlesList;
         private List<string> _categories = new List<string>();
         private ObservableCollection<Articles> _articlesCollection;
@@ -28,6 +29,9 @@ namespace WpfApp.DataProviders
                 }
             }
         }
+        #endregion
+
+        #region Constructor & Image sliding task
         public NewsDataProvider()
         {
             _categories.Add("general");
@@ -49,7 +53,7 @@ namespace WpfApp.DataProviders
                 OnPropertyChanged("MainNewsImage");
             }
         }
-
-    }    
+        #endregion
+    }
 
 }
