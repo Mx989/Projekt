@@ -7,6 +7,15 @@ WakeApp is an application that is supposed to make your daily morning routine mu
 1. Download the Github repo as zip or Clone it
 2. Run the WPFApp Project
 
+## Screenshots
+
+![Image of Main View](https://raw.githubusercontent.com/Mx989/Projekt/master/Screenshots/1.jpg)
+![Image of News](https://raw.githubusercontent.com/Mx989/Projekt/master/Screenshots/2.jpg)
+![Image of Weather](https://raw.githubusercontent.com/Mx989/Projekt/master/Screenshots/3.jpg)
+
+
+
+
 ### Prerequisites
 
 ```
