@@ -9,11 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewsApi", "NewsApi\NewsApi.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccuWeatherApi", "AccuWeatherApi\AccuWeatherApi.csproj", "{5B7D6CC1-80F3-4F0A-97A7-751A8F55EABD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DailyNotesConsole", "DailyNotesConsole\DailyNotesConsole.csproj", "{21DAA992-C622-4AF2-B2D2-475D2E2AB4F7}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DailyNotesClasses", "DailyNotesClasses\DailyNotesClasses.csproj", "{8B482DDD-0FC6-4B85-9738-978B3AA13536}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjektTests", "ProjektTests\ProjektTests.csproj", "{596DED6A-4E7B-478C-944E-2D5D0897C98E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjektTests", "ProjektTests\ProjektTests.csproj", "{596DED6A-4E7B-478C-944E-2D5D0897C98E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +31,6 @@ Global
 		{5B7D6CC1-80F3-4F0A-97A7-751A8F55EABD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B7D6CC1-80F3-4F0A-97A7-751A8F55EABD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B7D6CC1-80F3-4F0A-97A7-751A8F55EABD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{21DAA992-C622-4AF2-B2D2-475D2E2AB4F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{21DAA992-C622-4AF2-B2D2-475D2E2AB4F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{21DAA992-C622-4AF2-B2D2-475D2E2AB4F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{21DAA992-C622-4AF2-B2D2-475D2E2AB4F7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8B482DDD-0FC6-4B85-9738-978B3AA13536}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8B482DDD-0FC6-4B85-9738-978B3AA13536}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B482DDD-0FC6-4B85-9738-978B3AA13536}.Release|Any CPU.ActiveCfg = Release|Any CPU
