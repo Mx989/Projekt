@@ -4,8 +4,8 @@ WakeApp is an application that is supposed to make your daily morning routine mu
 
 ## Getting Started
 
-1.Download the Github repo as zip or Clone it
-2.Run the WPFApp Project
+1. Download the Github repo as zip or Clone it
+2. Run the WPFApp Project
 
 ### Prerequisites
 
@@ -22,12 +22,12 @@ Step by step instructions of running the application.
 2.Run it in Visual Studio!
 
 ## How it Works
--We open the main news by clicking on it,
--We move the secondary news by clicking on them,
--You can add notes,save locally and delete them with a button
--You open the weather by clicking on the date/hour
--You open the Calendar by clicking on the date/hour
--You go back to the main View by clicking the home button 
+- You open the main news by clicking on it,
+- You move the secondary news by clicking on them,
+- You can add notes,save locally and delete them with a button
+- You open the weather by clicking on the date/hour
+- You open the Calendar by clicking on the date/hour
+- You go back to the main View by clicking the home button 
 
 
 ## Built With
