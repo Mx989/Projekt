@@ -9,8 +9,10 @@ using NewsApi;
 
 namespace WpfApp.DataProviders
 {
-    public class DataProviderBase
+    public class DataProviderBase : INotifyPropertyChanged
     {
+        // INotifyPropertyChanged support
+
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string propertyName)
             {

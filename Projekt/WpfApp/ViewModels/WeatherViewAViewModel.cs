@@ -11,6 +11,7 @@ namespace WpfApp.ViewModels
 {
     public class WeatherViewAViewModel : ViewModelBase
     {
+        #region Properties
         private WeatherDataProvider _weatherDataProvider;
         public string Date
         {
@@ -39,10 +40,13 @@ namespace WpfApp.ViewModels
         {
             get { return _weatherDataProvider.HourlyForecastList[1].Temperature.Value.ToString() + "°C"; }
         }
-        
+        #endregion
+
+        #region Constructor
         public WeatherViewAViewModel(WeatherDataProvider weatherDataProvider)
         {
             _weatherDataProvider = weatherDataProvider;
         }
+        #endregion
     }
 }

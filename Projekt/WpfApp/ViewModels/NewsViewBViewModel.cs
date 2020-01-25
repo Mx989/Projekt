@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using WpfApp.DataProviders;
+using WpfApp.Classes;
 
 namespace WpfApp.ViewModels
 {
     public class NewsViewBViewModel : ViewModelBase
     {
+        #region Properties
         NewsDataProvider _newsDataProviderClient;
 
         public string ImgUrl
@@ -40,9 +43,34 @@ namespace WpfApp.ViewModels
         {
             get { return _newsDataProviderClient.ArticlesCollection[0].url; }
         }
+        #endregion
+
+        #region Constructor
         public NewsViewBViewModel(NewsDataProvider newsDataProvider)
         {
             _newsDataProviderClient = newsDataProvider;
         }
+        #endregion
+
+        #region Commands
+        private ICommand _openLinkCommand;
+
+        public object OpenLinkCommand
+        {
+            get
+            {
+                return _openLinkCommand ?? (_openLinkCommand = new RelayCommand(
+                    x =>
+                    {
+                        openLink();
+                    }));
+            }
+        }
+
+        private void openLink()
+        {
+            System.Diagnostics.Process.Start(Link);
+        }
+        #endregion
     }
 }

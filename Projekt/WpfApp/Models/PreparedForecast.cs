@@ -8,6 +8,7 @@ namespace WpfApp.Models
 {
     public class PreparedForecast
     {
+        #region Properties
         public DateTime Date { get; }
         public string FullHour
         {
@@ -29,7 +30,9 @@ namespace WpfApp.Models
                 return PrecipitationIntensity + " " + PrecipitationType;
             }
         }
+        #endregion
 
+        #region Constructor
         public PreparedForecast(DateTime dateTime, string imgUrl, string temperature, string precipitationType, string precipitationIntensity, string precipitationProbability)
         {
             Date = dateTime;
@@ -39,5 +42,6 @@ namespace WpfApp.Models
             PrecipitationIntensity = precipitationIntensity;
             PrecipitationProbability = precipitationProbability;
         }
+        #endregion
     }
 }

@@ -24,7 +24,7 @@ namespace WpfApp.ViewModels
         #endregion
 
         #region Constructor
-        public NotesViewAViewModel(NotesDataProvider notesDataProvider)
+        public NotesViewAViewModel()
         {
             LoadNotes();
         }
@@ -38,12 +38,6 @@ namespace WpfApp.ViewModels
         }
         #endregion
         
-        public int RandomNumber(int min, int max)
-        {
-            Random random = new Random();
-            return random.Next(min, max);
-        }
-
         #region Commands
 
         private ICommand _addNoteCommand;
@@ -62,7 +56,7 @@ namespace WpfApp.ViewModels
 
         public void AddNote()
         {
-            _notesList.Add(new Note(RandomNumber(0, 9999999), ""));
+            _notesList.Add(new Note());
             OnPropertyChanged("NotesList");
         }
 
