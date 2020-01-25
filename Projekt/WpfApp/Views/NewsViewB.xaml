@@ -15,6 +15,9 @@
         <TextBlock HorizontalAlignment="Left" Name="Content" Text="{Binding Content}" Margin="28,263,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.553,-1.281" Height="177" Width="445" Foreground="White" FontFamily="Arial" FontWeight="Bold"/>
         <TextBlock TextWrapping="Wrap" Name="Author" Text="{Binding Author}" RenderTransformOrigin="0.58,3.224" Margin="38,406,263,10" Foreground="White" FontWeight="Bold" FontFamily="Arial" FontStyle="Italic"/>
         <TextBlock TextWrapping="Wrap" Name="PublishedAt" Text="{Binding PublishedAt}" Margin="295,406,27,10" Foreground="White" FontFamily="Arial" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Foreground="White" FontFamily="Arial" Margin="148,332,0,0" VerticalAlignment="Top" Width="199" FontWeight="Bold" Height="32">
+            <Hyperlink NavigateUri="{Binding Link}">Click here to open the full article</Hyperlink>
+        </TextBlock>
 
     </Grid>
 </UserControl>

@@ -35,6 +35,11 @@ namespace WpfApp.ViewModels
         {
             get { return _newsDataProviderClient.ArticlesCollection[0].publishedAt; }
         }
+
+        public string Link
+        {
+            get { return _newsDataProviderClient.ArticlesCollection[0].url; }
+        }
         public NewsViewBViewModel(NewsDataProvider newsDataProvider)
         {
             _newsDataProviderClient = newsDataProvider;

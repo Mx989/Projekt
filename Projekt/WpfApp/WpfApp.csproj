@@ -165,7 +165,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="home.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AccuWeatherApi\AccuWeatherApi.csproj">
       <Project>{5b7d6cc1-80f3-4f0a-97a7-751a8f55eabd}</Project>

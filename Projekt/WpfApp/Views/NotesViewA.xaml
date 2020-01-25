@@ -8,8 +8,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="280" Margin="0 0 0 0" Padding="0 0 0 0" Width="290">
 
-    <Grid>
-        <ScrollViewer HorizontalAlignment="Left" Width="290" Margin="0 0 0 0" VerticalAlignment="Top" Height="280" VerticalScrollBarVisibility="Visible" Background="#FF181432">
+    <Grid Margin="0,0,8,0">
+        <ScrollViewer HorizontalAlignment="Left" Width="284" VerticalAlignment="Top" Height="280" VerticalScrollBarVisibility="Auto" Margin="0,0,-2,0">
             <StackPanel HorizontalAlignment="Left">
                 <ItemsControl ItemsSource="{Binding Path=NotesList}">
                     <ItemsControl.ItemTemplate>
@@ -22,9 +22,9 @@
                 </ItemsControl>
             </StackPanel>
         </ScrollViewer>
-        <Button Content="Add Note" Command="{Binding AddNoteCommand}" Height="30" Margin="10,240,220,10"/>
-        <Button Content="Save" Command="{Binding SaveNotesCommand}" Height="30" Margin="105,240,129,10" RenderTransformOrigin="0.893,0.433"/>
-        <Button Content="Delete Notes" Command="{Binding DeleteNotesCommand}" Height="30"  Margin="188,240,31,10"/>
+        <Button Content="Add Note" BorderThickness="0" Command="{Binding AddNoteCommand}" Height="30" Margin="10,238,207,12" Background="#FF1E55A4" Foreground="White" FontWeight="Bold" FontFamily="Arial"/>
+        <Button Content="Save" BorderThickness="0" Command="{Binding SaveNotesCommand}" Height="30" Margin="105,238,129,12" RenderTransformOrigin="0.893,0.433" FontWeight="Bold" FontFamily="Arial" Foreground="White" Background="#FF1E55A4"/>
+        <Button Content="Delete Notes" BorderThickness="0" Command="{Binding DeleteNotesCommand}" Height="30"  Margin="182,238,16,12" Background="#FF1E55A4" Foreground="White" FontWeight="Bold" FontFamily="Arial"/>
 
     </Grid>
 </UserControl>
